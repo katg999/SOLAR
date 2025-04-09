@@ -66,10 +66,10 @@ const HowItWorks = () => {
         {/* Heading Section */}
         <div className="text-center mb-12">
           <h2 className="text-black font-[Onest] font-semibold text-[32px] md:text-[44px] leading-[38px] md:leading-[52px] mb-3">
-            How it Works
+            Get funded in just a few simple steps
           </h2>
           <p className="text-[#475569] font-[Onest] font-normal text-[17px] leading-[100%]">
-            It's simple and fast.
+            Follow our fast Sandi AI process to unlock water for your group
           </p>
         </div>
 

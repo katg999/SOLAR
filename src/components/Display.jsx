@@ -15,15 +15,16 @@ const Display = () => {
       <div className="mt-8 md:mt-16 mb-6 md:mb-8 max-w-5xl">
         <h1 className="text-center font-[Onest] font-semibold text-[40px] md:text-[64px] leading-[50px] md:leading-[74.8px] tracking-[-0.035em] text-black">
           Access to Clean Water, Powered by{" "}
-          <span className="text-blue-600">AI</span> &{" "}
-          <span className="text-blue-600">Solar</span>
+          <span className="text-blue-600">Sandi</span>
+          <span className="text-blue-600">AI</span>
         </h1>
       </div>
 
       {/* Body text with exact typography */}
       <p className="mt-4 md:mt-6 text-center text-[16px] md:text-[18px] leading-[24px] md:leading-[26px] tracking-[-0.22px] max-w-2xl text-gray-700 font-[Onest] font-medium">
-        DayLight Solar Energies helps farmers, schools, and communities access
-        clean water and irrigation systems—fast, smart, and affordable.
+        DayLight Solar Energies helps organised groups of farmers, schools,
+        Saving groups get clean water -it's fast, automated and no need for
+        upfront payments.
       </p>
 
       {/* Button group with proper icon placement */}
