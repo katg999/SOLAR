@@ -1,62 +1,26 @@
 import React from "react";
-import needsIcon from "../assets/images/Needs.png";
-import chatbotIcon from "../assets/images/Chatbot.png";
-import creditIcon from "../assets/images/Credit.png";
-import approvalIcon from "../assets/images/Approval.png";
-import installationIcon from "../assets/images/Installation.png";
-import repaymentIcon from "../assets/images/Repayment.png";
-import supportIcon from "../assets/images/Support.png";
+import Sand1 from "../assets/images/Sand.png";
+import Sand2 from "../assets/images/Sand2.png";
+import Sand3 from "../assets/images/Sand3.png";
 
 const HowItWorks = () => {
-  const cards = [
+  const steps = [
     {
-      number: 1,
-      icon: needsIcon,
-      title: "Identifying Your Needs",
+      title: "Initial Consultation",
       description:
-        "We partner with communities to find out which groups need water or irrigation solutions.",
+        "Start by chatting with our AI assistant to assess your needs",
+      image: Sand1,
     },
     {
-      number: 2,
-      icon: chatbotIcon,
-      title: "Chat with our smart assistant",
+      title: "Application Process",
       description:
-        "Through your phone/computer, which guides you through the whole process.",
+        "Complete your loan application through the WhatsApp interface",
+      image: Sand2,
     },
     {
-      number: 3,
-      icon: creditIcon,
-      title: "AI-Powered Credit Check",
-      description:
-        "Our platform looks at your group’s financial habits (like mobile money activity and savings records) to determine if you qualify for a loan.",
-    },
-    {
-      number: 4,
-      icon: approvalIcon,
-      title: "Loan Matching & Advice",
-      description:
-        "Based on your financial profile, the chatbot recommends the best lender for your needs and how likely you are to get approved.",
-    },
-    {
-      number: 5,
-      icon: installationIcon,
-      title: "Loan Application",
-      description:
-        "If you agree with the recommendation, the chatbot automatically submits your loan application for you.",
-    },
-    {
-      number: 6,
-      icon: repaymentIcon,
-      title: "Lender verification",
-      description:
-        "The lender reviews the application and performs their checks before offering the loan.",
-    },
-    {
-      number: 7,
-      icon: supportIcon,
-      title: "Water System Installation",
-      description:
-        "Once the loan is approved, DayLight Solar Energies provides and installs the water or irrigation systems you need.",
+      title: "Approval & Installation",
+      description: "Get approved and schedule your water system installation",
+      image: Sand3, // Replace with actual image when available
     },
   ];
 
@@ -66,107 +30,60 @@ const HowItWorks = () => {
         {/* Heading Section */}
         <div className="text-center mb-12">
           <h2 className="text-black font-[Onest] font-semibold text-[32px] md:text-[44px] leading-[38px] md:leading-[52px] mb-3">
-            How it Works
+            See how Sandi AI works in real life
           </h2>
           <p className="text-[#475569] font-[Onest] font-normal text-[17px] leading-[100%]">
-            It's simple and fast.
+            Our WhatsApp-based process makes getting funded simple and familiar
           </p>
         </div>
 
-        {/* First Row - 2 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {cards.slice(0, 2).map((card) => (
-            <div
-              key={card.number}
-              className="bg-white rounded-xl p-6 shadow-sm relative h-full flex flex-col"
-            >
-              {/* Number badge top-left */}
-              <div className="w-10 h-10 rounded-full border border-[#E4E6E8] bg-[#F8FAFC] flex items-center justify-center self-start">
-                <span className="text-[#52525B] font-[Onest] font-semibold">
-                  {card.number}
-                </span>
+        {/* Process Steps */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {steps.map((step, index) => (
+            <div key={index} className="flex flex-col items-center">
+              {/* Step Number */}
+              <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-[Onest] font-semibold text-lg mb-4">
+                {index + 1}
               </div>
 
-              {/* Content middle */}
-              <div className="mt-6 flex-grow">
-                <h3 className="text-black font-[Onest] font-semibold text-xl mb-3">
-                  {card.title}
+              {/* WhatsApp Screenshot */}
+              <div className="bg-white p-2 rounded-2xl shadow-lg mb-4 w-full max-w-xs">
+                <img
+                  src={step.image}
+                  alt={`Step ${index + 1}`}
+                  className="w-full h-auto rounded-xl border border-gray-200"
+                />
+              </div>
+
+              {/* Step Content */}
+              <div className="text-center">
+                <h3 className="text-black font-[Onest] font-semibold text-xl mb-2">
+                  {step.title}
                 </h3>
                 <p className="text-[#475569] font-[Onest] font-normal text-base">
-                  {card.description}
+                  {step.description}
                 </p>
-              </div>
-
-              {/* Larger icon bottom-right */}
-              <div className="mt-6 flex justify-end">
-                <img src={card.icon} alt="" className="w-20 h-20" />{" "}
-                {/* Increased size */}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Second Row - 3 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {cards.slice(2, 5).map((card) => (
-            <div
-              key={card.number}
-              className="bg-white rounded-xl p-6 shadow-sm relative h-full flex flex-col"
-            >
-              <div className="w-10 h-10 rounded-full border border-[#E4E6E8] bg-[#F8FAFC] flex items-center justify-center self-start">
-                <span className="text-[#52525B] font-[Onest] font-semibold">
-                  {card.number}
-                </span>
-              </div>
-              <div className="mt-6 flex-grow">
-                <h3 className="text-black font-[Onest] font-semibold text-xl mb-3">
-                  {card.title}
-                </h3>
-                <p className="text-[#475569] font-[Onest] font-normal text-base">
-                  {card.description}
-                </p>
-              </div>
-              <div className="mt-6 flex justify-end">
-                <img src={card.icon} alt="" className="w-20 h-20" />{" "}
-                {/* Increased size */}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Third Row - 2 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {cards.slice(5, 7).map((card) => (
-            <div
-              key={card.number}
-              className="bg-white rounded-xl p-6 shadow-sm relative h-full flex flex-col"
-            >
-              <div className="w-10 h-10 rounded-full border border-[#E4E6E8] bg-[#F8FAFC] flex items-center justify-center self-start">
-                <span className="text-[#52525B] font-[Onest] font-semibold">
-                  {card.number}
-                </span>
-              </div>
-              <div className="mt-6 flex-grow">
-                <h3 className="text-black font-[Onest] font-semibold text-xl mb-3">
-                  {card.title}
-                </h3>
-                <p className="text-[#475569] font-[Onest] font-normal text-base">
-                  {card.description}
-                </p>
-              </div>
-              <div className="mt-6 flex justify-end">
-                <img src={card.icon} alt="" className="w-20 h-20" />{" "}
-                {/* Increased size */}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Button */}
+        {/* CTA Section */}
         <div className="text-center">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium transition">
-            Get Financing
-          </button>
+          <p className="text-[#475569] font-[Onest] font-medium text-lg mb-6">
+            Ready to start the conversation?
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-medium transition flex items-center justify-center gap-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              Chat on WhatsApp
+            </button>
+            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium transition">
+              Learn More
+            </button>
+          </div>
         </div>
       </div>
     </div>
