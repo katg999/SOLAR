@@ -1,35 +1,75 @@
 import React from "react";
-import Sand1 from "../assets/images/Sand.png";
-import Sand2 from "../assets/images/Sand2.png";
-import Sand3 from "../assets/images/Sand3.png";
+import LoginImage from "../assets/images/login.png";
+import WaterNeedsImage from "../assets/images/water needs.png";
+import LoanOptionsImage from "../assets/images/Get Loan Options & Apply.png";
 
 const HowItWorks = () => {
-  const steps = [
+  const sections = [
     {
-      title: "Initial Consultation",
+      title: "Start by Logging In",
       description:
-        "Start by chatting with our AI assistant to assess your needs",
-      image: Sand1,
+        "Enter your group number to unlock personalized access. Sandi AI will greet you and know exactly who you are ready to help with water solutions.",
+      image: LoginImage,
+      imagePosition: "left",
+      displayOption: "full", // options: "full", "half", "quarter-right"
     },
     {
-      title: "Application Process",
+      title: "Share your Water Needs",
       description:
-        "Complete your loan application through the WhatsApp interface",
-      image: Sand2,
+        "Quickly share your water requirements—like tank type and size—using simple, guided prompts. Our chatbot understands your needs instantly.",
+      image: WaterNeedsImage,
+      imagePosition: "right",
+      displayOption: "full",
     },
     {
-      title: "Approval & Installation",
-      description: "Get approved and schedule your water system installation",
-      image: Sand3, // Replace with actual image when available
+      title: "Get Loan Options Instantly",
+      description:
+        "Sandi AI checks multiple lenders and shows the best financing offers for your needs. Pick the offer you like, download the form, and upload it—all right in the chat.",
+      image: LoanOptionsImage,
+      imagePosition: "left",
+      displayOption: "full",
     },
   ];
 
+  const getClipPath = (option) => {
+    switch (option) {
+      case "half":
+        return "inset(50% 0 0 0)"; // Show bottom half
+      case "quarter-right":
+        return "inset(0 0 0 75%)"; // Show right quarter
+      case "full":
+      default:
+        return "inset(0 0 0 0)"; // Show full image
+    }
+  };
+
+  const getContainerHeight = (option) => {
+    switch (option) {
+      case "half":
+        return "360px";
+      case "quarter-right":
+        return "711.96px"; // Full height for quarter-width
+      case "full":
+      default:
+        return "711.96px";
+    }
+  };
+
+  const getContainerWidth = (option) => {
+    switch (option) {
+      case "quarter-right":
+        return "90px"; // Approximately 1/4 of 350px
+      default:
+        return "350px";
+    }
+  };
+
   return (
-    <div className="w-full py-16 px-4 md:px-8 lg:px-16 bg-[#EFF6FF]">
+    <div className="w-full py-16 px-4 md:px-8 lg:px-16 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Heading Section */}
         <div className="text-center mb-12">
-          <h2 className="text-black font-[Onest] font-semibold text-[32px] md:text-[44px] leading-[38px] md:leading-[52px] mb-3">
+          <h2 className="text-[#172554] font-[Onest] font-semibold text-[32px] md:text-[44px] leading-[38px] md:leading-[52px] mb-3">
             See how Sandi AI works in real life
           </h2>
           <p className="text-[#475569] font-[Onest] font-normal text-[17px] leading-[100%]">
@@ -37,39 +77,61 @@ const HowItWorks = () => {
           </p>
         </div>
 
-        {/* Process Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {steps.map((step, index) => (
-            <div key={index} className="flex flex-col items-center">
-              {/* Step Number */}
-              <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-[Onest] font-semibold text-lg mb-4">
-                {index + 1}
-              </div>
-
-              {/* WhatsApp Screenshot */}
-              <div className="bg-white p-2 rounded-2xl shadow-lg mb-4 w-full max-w-xs">
-                <img
-                  src={step.image}
-                  alt={`Step ${index + 1}`}
-                  className="w-full h-auto rounded-xl border border-gray-200"
-                />
-              </div>
-
-              {/* Step Content */}
-              <div className="text-center">
-                <h3 className="text-black font-[Onest] font-semibold text-xl mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-[#475569] font-[Onest] font-normal text-base">
-                  {step.description}
-                </p>
+        {/* Sections with alternating image/text layout */}
+        {sections.map((section, index) => (
+          <div
+            key={index}
+            className={`flex flex-col ${
+              section.imagePosition === "right"
+                ? "md:flex-row"
+                : "md:flex-row-reverse"
+            } items-center gap-8 md:gap-12 mb-16 md:mb-24`}
+          >
+            {/* Image card container */}
+            <div className="w-full md:w-1/2 flex justify-center">
+              <div
+                className="relative rounded-2xl overflow-hidden shadow-lg"
+                style={{
+                  background:
+                    "radial-gradient(circle at center, #EFF6FF 0%, #BFDBFE 100%)",
+                  height: getContainerHeight(section.displayOption),
+                  width: getContainerWidth(section.displayOption),
+                }}
+              >
+                <div className="absolute inset-0 overflow-hidden">
+                  <img
+                    src={section.image}
+                    alt={section.title}
+                    className="absolute bottom-0"
+                    style={{
+                      width:
+                        section.displayOption === "quarter-right"
+                          ? "350px"
+                          : "100%",
+                      height: "711.96px",
+                      objectFit: "cover",
+                      objectPosition: "center bottom",
+                      clipPath: getClipPath(section.displayOption),
+                    }}
+                  />
+                </div>
               </div>
             </div>
-          ))}
-        </div>
+
+            {/* Text content */}
+            <div className="w-full md:w-1/2">
+              <h3 className="text-[#172554] font-[Onest] font-semibold text-2xl md:text-3xl mb-4">
+                {section.title}
+              </h3>
+              <p className="text-[#475569] font-[Onest] font-normal text-base md:text-lg">
+                {section.description}
+              </p>
+            </div>
+          </div>
+        ))}
 
         {/* CTA Section */}
-        <div className="text-center">
+        <div className="text-center mt-8">
           <p className="text-[#475569] font-[Onest] font-medium text-lg mb-6">
             Ready to start the conversation?
           </p>
