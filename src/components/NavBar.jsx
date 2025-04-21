@@ -10,15 +10,8 @@ const Navbar = () => {
 
   const navItems = [
     { name: "About Us", path: "/about-us" },
-    { name: "How It Works", path: "/how-it-works" },
-    {
-      name: "Solutions",
-      subItems: [
-        { name: "Residential", path: "/solutions/residential" },
-        { name: "Commercial", path: "/solutions/commercial" },
-        { name: "Industrial", path: "/solutions/industrial" },
-      ],
-    },
+    { name: "How It Works", path: "/" },
+    { name: "Solutions", path: "/solutions" }, // Simplified version without subItems
   ];
 
   // Close mobile menu when resizing to desktop
@@ -63,13 +56,13 @@ const Navbar = () => {
             {/* Brand */}
             <Link
               to="/"
-              className="text-xl md:text-2xl font-bold text-black"
+              className="text-xl md:text-2xl font-bold text-blue-600" // Using Tailwind's blue-600
               onClick={() => {
                 setActiveDropdown(null);
                 setMobileMenuOpen(false);
               }}
             >
-              DayLight Solar
+              SandiAI
             </Link>
 
             {/* Desktop Menu */}
