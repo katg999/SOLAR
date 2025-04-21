@@ -8,6 +8,7 @@ import Choose from "./components/Choose";
 import Ready from "./components/Ready";
 import Footer from "./components/Footer";
 import AboutUs from "./components/AboutUs";
+import Solutions from "./components/Solutions";
 
 export default function App() {
   return (
@@ -29,6 +30,8 @@ export default function App() {
           }
         />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/solutions" element={<Solutions />} />
+
         {/* You can also add other routes like How It Works, etc., here later */}
       </Routes>
     </>

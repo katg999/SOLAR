@@ -5,7 +5,9 @@ import image43 from "../assets/images/image 43.png";
 import image42 from "../assets/images/image 42.png";
 import image41 from "../assets/images/image 41.png";
 import image38 from "../assets/images/image 38.png";
-import image32 from "../assets/images/image 32.png";
+import image32 from "../assets/images/image 46.png";
+import image45 from "../assets/images/image 45.png";
+import image47 from "../assets/images/image 47.png";
 import Choose from "../components/Choose";
 import Ready from "../components/Ready";
 import Footer from "../components/Footer";
@@ -90,7 +92,7 @@ const AboutUs = () => {
           {/* Card 1 */}
           <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
             <img
-              src={image38}
+              src={image47}
               alt="Farmers"
               className="w-full h-48 object-cover"
             />
@@ -126,7 +128,7 @@ const AboutUs = () => {
           {/* Card 3 */}
           <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
             <img
-              src={image38}
+              src={image45}
               alt="Schools & Health Centers"
               className="w-full h-48 object-cover"
             />
