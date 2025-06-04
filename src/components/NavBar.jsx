@@ -141,7 +141,7 @@ const Navbar = () => {
                 onClick={() => window.voiceflow?.chat?.open?.()}
                 className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 lg:px-6 rounded-full transition text-sm lg:text-base"
               >
-                Talk To Our Assistant
+                Talk To SandiAI
               </button>
             </div>
 
